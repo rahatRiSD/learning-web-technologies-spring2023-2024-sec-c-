@@ -1,21 +1,23 @@
-<facultys>
-    <faculty fl="1">
+<persons>
+    <person fl="1">
          <id> 1</id>
         <name> John Doe</name>
         <address>
-            <house>H#38</house>
-            <road>R#3</road>
+            <flat></flat>
+            <house>38</house>
+            <road>3</road>
             <area>Banani</area>
             <city>Dhaka</city>
         
         </address>
         <department>Sales</department>
         <salary>$20000  </salary>
-    </faculty>
-        <faculty fl="2">
+    </person>
+        <person fl="2">
          <id> 2</id>
         <name> Mark Zuckerberg</name>
         <address>
+              <flat>egreg</flat>
             <house>H#383332</house>
             <road>R#32323</road>
             <area>Mirpur</area>
@@ -24,11 +26,12 @@
         </address>
         <department>Accounts</department>
         <salary>$2000033  </salary>
-    </faculty>
-        <faculty fl="3">
+    </person>
+        <person fl="3">
          <id> 3</id>
         <name> Ala Voski</name>
         <address>
+              <flat>tewg</flat>
             <house>H#328</house>
             <road>R#31</road>
             <area>Motijeel</area>
@@ -37,5 +40,5 @@
         </address>
         <department>Sales</department>
         <salary>$20000  </salary>
-    </faculty>    
-    </facultys>
+    </person>    
+    </persons>
