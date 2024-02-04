@@ -1,0 +1,29 @@
+<employees>
+    <employee em="1">
+         <sl_no> 23</sl_no>
+        <name> John Carter</name>
+       <admission>
+            <date>25</date>
+            <month>12</month>
+            <year>2015</year>
+        </admission>
+    </employee>
+    <employee em ="2">
+         <sl_no> 29</sl_no>
+        <name> Bob Marshal</name>
+    <admission>
+            <date>13</date>
+            <month>01</month>
+            <year>1999</year>
+        </admission>
+    </employee>
+    <employee em="3">
+         <sl_no>35</sl_no>
+        <name> Clark Kent</name>
+       <admission>
+            <date>17</date>
+            <month>06</month>
+            <year>2005</year>
+        </admission>
+    </employee>
+</employees>
