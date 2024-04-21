@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+    <fieldset>
+        <legend>NAME</legend>
+        Name <br>
+
+            <input type="text" name="name" id="name"> <br>
+            <hr>
+            <input type="submit" value="submit" id="submit" onclick="check()">
+            <br>
+            <p id="msg"></p>
+
+
+        <script>
+            function check(){
+                let name = document.getElementById("name").value;
+                let words = name.split(" ").length;
+                let msg = document.getElementById("msg");
+                msg.style.color = "green";
+                if(name.length == 0){
+                    msg.innerHTML = "<p>Name cannot be empty</p>";
+                    return false;
+                }
+                else if(words < 2){
+                    msg.innerHTML = "<p>At least two word</p>";
+                    return false;
+                }
+                else if(name[0] == '.' || name[0] == '-') {
+                    msg.innerHTML = "<p>Must start with latter</p>";
+                    return false;
+                }
+
+                for(let i = 0; i < name.length; i++){
+                    if((name[i] <= 'z' && name[i] >= 'a') || (name[i] <= 'Z' && name[i] >= 'A') || name[i] ==' ' || name[i] == '.' || name[i] == '-'){
+                        
+                    }
+                    else {
+                        msg.innerHTML = "<p>Only contain A-Z or a-z or (.) (-)</p>";
+                        return false;
+                        
+                    }
+                }
+                msg.innerHTML = "";
+                return true;
+            }
+        </script>
+    </fieldset>
+</body>
+</html>

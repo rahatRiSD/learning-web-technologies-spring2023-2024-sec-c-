@@ -1,0 +1,46 @@
+
+<html lang="en">
+<head>
+    <title>Profile Picture</title>    
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+    <fieldset>
+        <legend>Profile Picture</legend>
+        User Id 
+        <input type="number" name="userId" id="userId" value=""/> <br>
+       
+        Picture
+        <input type="file" name="profilePicture" id="profilePicture">
+        <hr>
+        <input type="button" name="click" value="Submit" onclick="validate()" />
+    </fieldset>
+    
+    <h2 id="message"></h2> 
+    <script>
+        function validate(){
+            let userId = document.getElementById('userId').value;
+            let profilePicture = document.getElementById("profilePicture"); 
+            
+            let message = document.getElementById('message');
+
+            if(!userId){
+                message.innerHTML = "UserId Cannot Be Empty!";
+                return;
+            }
+            if(userId <= 0){
+                message.innerHTML = "UserId Must Be Positive!";
+                return;
+            }
+            if(profilePicture.files.length == 0){
+                message.innerHTML = "Please Select a Picture!";
+                return;
+            }
+            
+            message.innerHTML = "UserId and Profile Picture Valid!";
+
+            
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+    <fieldset>
+        <legend>EMAIL</legend>
+        Email <br>
+        <input type="text" name="email" id="email">
+        <input type="submit" value="i" title="hint: example@example.com">
+        <br>
+        <input type="submit" value="submit" id="submit" onclick="validate()">
+        <p id="msg"></p>
+    </fieldset>
+    <script>
+        function validate() {
+            let emailAddress = document.getElementById('email').value;
+            
+            let atSymbol = emailAddress.indexOf("@");
+            let dotSymbol = emailAddress.lastIndexOf(".");
+            let spaceSymbol = emailAddress.indexOf(" ");
+            let msg = document.getElementById('msg');
+
+
+            if ((atSymbol != -1) &&
+                (atSymbol != 0) &&
+                (dotSymbol != -1) &&
+                (dotSymbol != 0) &&
+                (dotSymbol > atSymbol + 1) &&
+                (emailAddress.length > dotSymbol + 1) &&
+                (spaceSymbol == -1)) {
+                msg.innerHTML = "";
+                return true;
+            } else {
+                msg.innerHTML = "<p>Invalid Email </p>";
+                return false;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

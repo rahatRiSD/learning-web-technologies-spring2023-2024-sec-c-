@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+        <fieldset>
+            <legend>Gender</legend>
+            <input type="radio" name="gender" id="Male" value="Male"> Male
+            <input type="radio" name="gender" id="Female" value="Female"> Female
+            <input type="radio" name="gender" id="Other" value="Other"> Other
+        </fieldset>
+        <input type="submit" value="submit" id="submit" onclick="check()">
+        <p id="msg"></p>
+
+        <script>
+            let check = () =>{
+                let msg = document.getElementById('msg');
+                let male = document.getElementById('Male').checked;
+                let female = document.getElementById('Female').checked;
+                let others = document.getElementById('Other').checked;
+                if(male || female || others){
+                    msg.innerHTML = "";
+                    return true;
+                    
+                }
+                else {
+                    msg.innerHTML = "<p>Field(s) cannot be empty</p>";
+                    return false;
+                }
+                
+            }
+        </script>
+</body>
+</html>

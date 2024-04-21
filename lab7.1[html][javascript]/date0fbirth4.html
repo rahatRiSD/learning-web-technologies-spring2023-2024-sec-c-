@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+    <fieldset>
+        <legend>Date of Birth</legend>
+        &nbsp; dd &nbsp; &nbsp; &nbsp; mm   &nbsp;yyyy <br>
+        <input type="text" name="date" id="d" size="1"> /
+        <input type="text" name="month" id="m" size="1"> /
+        <input type="text" name="year" id="y" size="1">
+        <hr>
+        <input type="submit" value="submit" name="submit" id="submit" onclick="check()">
+        <br>
+        <p id="msg"></p>
+    </fieldset>
+
+    <script>
+        let check= () =>{
+            let d = Number(document.getElementById('d').value);
+            let m = Number(document.getElementById('m').value);
+            let y = Number(document.getElementById('y').value);
+            let msg = document.getElementById('msg');
+
+            if(d.length == NaN || m.length == NaN || y.length == NaN || (d > 31 || d < 1) || (m>12 || m < 1) || (y > 2016 || y < 1900)){
+                msg.innerHTML = "<p>Field(s) cannot be empty or invalid date (1900 - 2016)";
+                return false;
+            }
+            else {
+                msg.innerHTML = "";
+                return true;
+            }
+            
+        }
+    </script>
+    
+</body>
+</html>

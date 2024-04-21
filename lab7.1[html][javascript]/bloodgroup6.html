@@ -1,0 +1,40 @@
+
+<html lang="en">
+<head>
+    <title>Blood Group</title>    
+</head>
+<body>
+   
+        Blood Group 
+        <select id="bloodGroup" name="bloodGroup">
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+        </select>
+        <hr>
+        <input type="button" name="click" value="Submit" onclick="validate()" />
+    
+    
+    <h2 id="message"></h2> 
+    <script>
+        function validate(){
+            let bloodGroup = document.getElementById('bloodGroup').selectedText;
+            let message = document.getElementById('message');
+            if(bloodGroup == 0){
+                message.innerHTML = "Please Select A Blood Group!";
+            }
+            else{
+                message.innerHTML = "Blood Group is Valid!";
+
+            }
+
+        }
+        
+    </script>
+</body>
+</html>

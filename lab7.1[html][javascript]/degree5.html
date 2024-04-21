@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+    
+        <fieldset>
+            <legend>Degree</legend>
+            <input type="checkbox" name="degree" id="SSC" value="SSc" size="1"> SSC
+            <input type="checkbox" name="degree" id="HSC" value="HSc" size="1"> HSc
+            <input type="checkbox" name="degree" id="BSC"value="BSc" size="1"> BSC
+         
+        </fieldset>
+        <input type="submit" value="submit" id="submit" onclick="check()">
+        <p id="msg"></p>
+        <script>
+            let check = () =>{
+                let msg = document.getElementById('msg');
+                let ssc = document.getElementById('SSC').checked;
+                let hsc = document.getElementById('HSC').checked;
+                let bsc = document.getElementById ('BSC').checked;
+               
+                
+                if(ssc || hsc || bsc ){
+                    msg.innerHTML = "";
+                    return true;
+                    
+                }
+                else {
+                    msg.innerHTML = "<p>Field(s) cannot be empty</p>";
+                    return false;
+                }
+                
+            }
+        </script>
+
+    
+</body>
+</html>
