@@ -1,10 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Database Connection with Session</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        fieldset {
+            text-align: center;
+            width: 30%;
+            padding: 20px;
+        }
+
+        legend h2 {
+            color: blue;
+        }
+
+        label {
+            color: blue;
+        }
+
+        #username,
+        #password {
+            border: 2px solid blue;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        button[type="submit"] {
+            background-color: blue;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: darkblue;
+        }
+
+        #d2 {
+            background-color: green;
+            width: 300px;
+            height: 200px;
+            position: relative;
+            top: 0px;
+            left: 100px;
+            border: 3px solid black;
+        }
+
+        .c1 {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50px;
+            left: 100px;
+            border-radius: 50%;
+        }
+    </style>
 </head>
-<body style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
-    <fieldset style="text-align: center; width: 30%; padding: 20px;">
+<body>
+    <fieldset>
         <legend><h2>Login</h2></legend>
         <form method="post" action="login.php">
             <label for="username">Username:</label>

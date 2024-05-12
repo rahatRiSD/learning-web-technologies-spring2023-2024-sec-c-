@@ -10,10 +10,10 @@
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
         <label for="destination">Select Destination:</label>
         <select name="destination" id="destination">
-            <option value="paris">Paris</option>
-            <option value="rome">Rome</option>
-            <option value="tokyo">Tokyo</option>
-            <!-- Add more destination options as needed -->
+            <option value="dhaka">Dhaka</option>
+            <option value="coxsbazar">CoxsBazar</option>
+            <option value="syllet">Syllet</option>
+           
         </select>
         <br>
         <label for="image">Choose Image:</label>
@@ -23,32 +23,32 @@
     </form>
 
     <?php
-    // Check if form is submitted
+    
     if(isset($_POST['submit'])){
-        // Check if file was uploaded without errors
+        
         if(isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
-            $destination = $_POST['destination']; // Get selected destination
-            $fileTmpPath = $_FILES['image']['tmp_name']; // Temporary file path
-            $fileName = $_FILES['image']['name']; // File name
-            $fileType = $_FILES['image']['type']; // File type
-            $fileNameCmps = explode(".", $fileName); // Split file name into name and extension
-            $fileExtension = strtolower(end($fileNameCmps)); // Get file extension
+            $destination = $_POST['destination']; 
+            $fileTmpPath = $_FILES['image']['tmp_name']; 
+            $fileName = $_FILES['image']['name']; 
+            $fileType = $_FILES['image']['type']; 
+            $fileNameCmps = explode(".", $fileName); 
+            $fileExtension = strtolower(end($fileNameCmps));
             
-            // Allowed file extensions
+          
             $allowedExtensions = array('jpg', 'jpeg', 'png');
             
-            // Check if the uploaded file's extension is allowed
+           
             if(in_array($fileExtension, $allowedExtensions)){
-                // Destination directory for uploads
+                
                 $uploadDir = 'uploads/';
-                // Create directory if it does not exist
+                
                 if(!file_exists($uploadDir)){
                     mkdir($uploadDir, 0777, true);
                 }
-                // Final file destination
+                
                 $destPath = $uploadDir . $fileName;
                 
-                // Move uploaded file to destination
+               
                 if(move_uploaded_file($fileTmpPath, $destPath)){
                     echo "File uploaded successfully.";
         

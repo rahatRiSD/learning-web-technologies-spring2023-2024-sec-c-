@@ -4,31 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insert Data</title>
+    <style>
+        h1 {
+            color: blue;
+        }
+
+        #d1 {
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+        }
+
+        #d2 {
+            background-color: green;
+            width: 300px;
+            height: 200px;
+            /* margin: 10px 20px;
+            padding: 20px; */
+            position: relative;
+            top: 0px;
+            left: 100px;
+            border: 3px solid black;
+        }
+
+        .insert-form {
+            text-align: center;
+            width: 30%;
+            padding: 20px;
+        }
+
+        legend h2 {
+            color: blue;
+        }
+
+        label {
+            color: blue;
+        }
+
+        input[type="email"],
+        input[type="number"] {
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: blue;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: darkblue;
+        }
+    </style>
 </head>
- 
 <body>
-<fieldset >
+<fieldset>
     <legend><h2>All Records</h2></legend>
 
     <?php
-    // Start session
+   
     session_start();
     
     require_once('../model/database.php');
-    // Database connection
+    
     $conn = dbConnect();
    
-    // Check connection
+    
     if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
     }
    
-    // Display all records
+    
     $sql = "SELECT * FROM community";
     $result = $conn->query($sql);
    
     if ($result->num_rows > 0) {
-      // output data of each row
+      
       while($row = $result->fetch_assoc()) {
         echo "<p>Name: " . $row["name"]. " - Opinion: " . $row["opinion"]. "</p>";
       }
@@ -39,7 +93,7 @@
     ?>
   </fieldset>
 
-  <fieldset style="text-align: center; width: 30%; padding: 20px;">
+  <fieldset class="insert-form">
     <legend><h2>Insert Data into Database</h2></legend>
     <?php include 'menu.php';?>
     <form action="" method="post">
@@ -50,18 +104,18 @@
   
     <?php
     if(isset($_POST['submit'])){
-      // Database connection
+     
       $conn = mysqli_connect('localhost', 'root', '', 'web_tech');
    
-      // Check connection
+      
       if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
       }
 
-      // Get the name from the session
+      
       $name = $_SESSION['username'];
    
-      // Insert data into database
+     
       $opinion = $_POST['opinion'];
    
       $sql = "INSERT INTO community (name, opinion) VALUES ('$name', '$opinion')";

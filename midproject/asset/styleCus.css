@@ -1,0 +1,35 @@
+
+
+body {
+    background-image: url('../Images/homepage.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+a:link {
+    background-color: SeaGreen;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:visited {
+    background-color: SeaGreen;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover {
+    background-color: transparent;
+    color: Black;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+

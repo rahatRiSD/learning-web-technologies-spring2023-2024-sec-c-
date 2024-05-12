@@ -19,23 +19,37 @@
 </head>
 <body>
     <h2>Feedback Entries</h2>
+    <table width="100%" border="0">
+    <tr bgcolor="#333">
+        <td align="center"><a href="dashboard.php" style="color: white; text-decoration: none;">Home</a></td>
+        <td align="center"><a href="community.php" style="color: white; text-decoration: none;">Community</a></td>
+        <td align="center"><a href="newsletter.php" style="color: white; text-decoration: none;">Newsletter</a></td>
+        <td align="center"><a href="wallet.php" style="color: white; text-decoration: none;">Wallet</a></td>
+        <td align="center"><a href="settings.php" style="color: white; text-decoration: none;">Settings</a></td>
+        <td align="center"><a href="logout.php" style="color: white; text-decoration: none;">Logout</a></td>
+        <td align="center"><a href="signup.html" style="color: white; text-decoration: none;">Signup</a></td>
+        <td align="center"><a href="feedback.php" style="color: white; text-decoration: none;">Feedback</a></td>
+        <td align="center"><a href="view_transaction.php" style="color: white; text-decoration: none;">Transaction</a></td>
+    </tr>
+</table>
+
     <?php
-    // Database connection parameters
+    
     require_once('../model/database.php');
-    // Database connection
+    
     $conn = dbConnect();
 
-    // Check connection
+    
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Retrieve feedback entries from the database
+    
     $sql = "SELECT * FROM feedback";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        // Output data of each row in a table
+        
         echo "<table>";
         echo "<tr><th>ID</th><th>Name</th><th>Email</th><th>Rating</th><th>Comments</th><th>Submitted At</th></tr>";
         while ($row = $result->fetch_assoc()) {
@@ -53,7 +67,7 @@
         echo "No feedback entries available.";
     }
 
-    // Close connection
+    
     $conn->close();
     ?>
 </body>

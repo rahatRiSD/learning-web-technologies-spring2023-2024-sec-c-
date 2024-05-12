@@ -1,0 +1,75 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../asset/styleCus.css">
+    <script>
+        window.onload = function() {
+            setTimeout(changeImages, 3000); // Call changeImages function after 3 seconds
+        };
+
+        function changeImages() {
+            var images = document.querySelectorAll('.alternate-images');
+            var currentIndex = 0;
+            var interval = setInterval(function() {
+                images[currentIndex].style.display = 'none'; // Hide current image
+                currentIndex = (currentIndex + 1) % images.length; // Move to next image
+                images[currentIndex].style.display = 'block'; // Show next image
+            }, 3000); // Change image every 3 seconds
+        }
+    </script>
+</head>
+<body>
+    <table border="0" width="100%" height="100%">
+        <tr>
+            <td height="5%" width="15%" align="center">
+                <img src="../images/logo.png" height="100" width="100" alt="Green Dhaka Logo">
+            </td>
+            <td align="center" height="5%" width="70%">
+                <h1 style="color:SeaGreen;">  </h1> <br>
+                <h1 style="color:SeaGreen;"> Travel Management</h1>
+                <h4 style="color:SeaGreen;"> An initiative of  City Corporation </h4>
+                <h3 style="color:SeaGreen;"> HOME </h3>
+            </td>
+            <td align="center">
+                <a href="login.html"> Login </a>
+                <a href="register.php"> Register </a> <br /> <br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center" height="8%">
+                <a href="add_money.html">Add Money</a>
+                <a href="community.php">Community</a>
+                <a href="feedback.php">Feedback</a>
+                <a href="fileupload.php">File Upload</a>
+                <a href="logout.php">Log Out</a>
+                <a href="newsletter.php">News Letter</a>
+                <a href="points.php">Points</a>
+                <a href="view_feedback.php">View Feedback</a>
+                <a href="view_transactions.php">View Transaction</a>
+                <a href="support.html">Support</a>
+                <a href="login.html">Service History</a>
+                <a href="about_us.php">About Us</a>
+                <a href="wallet.php">Wallet</a>
+                <a href="settings.php">Settings</a>
+                
+                <img class="alternate-images" height="500" width="1000" src="../images/home.jpg" style="display: none;">
+                <img class="alternate-images" height="500" width="1000" src="../images/second-image.jpg" style="display: none;">
+                <img class="alternate-images" height="500" width="1000" src="../images/third-image.jpg" style="display: none;">
+                <img class="alternate-images" height="500" width="1000" src="../images/fourth-image.jpg" style="display: none;">
+                <img class="alternate-images" height="500" width="1000" src="../images/fifth-image.jpg" style="display: none;">
+            </td>
+
+        </tr>
+        <tr>
+            <td colspan="3"></td>
+        </tr>
+        <tr height="5%" align="center">
+            <td></td>
+            <td>
+                <p style="color:white;background-color:SeaGreen;"> Call now : +88017xxxxxxx Email:tourbd@gmail.com Address: Kuril,KA,187/0A Copyright ⓒ 2024
+                </p>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>

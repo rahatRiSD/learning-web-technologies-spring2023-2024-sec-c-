@@ -1,8 +1,8 @@
 <?php
-// Start the session to access session variables
+
 session_start();
 
-// Check if the user is logged in, if not, redirect to login page
+
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: login.html");
     exit;
@@ -26,7 +26,7 @@ $username = $_SESSION["username"];
        
 <table width="100%" border="0">
     <tr bgcolor="#333">
-        <td align="center"><a href="dashboard.php" style="color: white; text-decoration: none;">Home</a></td>
+        <td align="center"><a href="home_travel.html" style="color: white; text-decoration: none;">Home</a></td>
         <td align="center"><a href="community.php" style="color: white; text-decoration: none;">Community</a></td>
         <td align="center"><a href="newsletter.php" style="color: white; text-decoration: none;">Newsletter</a></td>
         <td align="center"><a href="wallet.php" style="color: white; text-decoration: none;">Wallet</a></td>
@@ -34,6 +34,7 @@ $username = $_SESSION["username"];
         <td align="center"><a href="logout.php" style="color: white; text-decoration: none;">Logout</a></td>
         <td align="center"><a href="signup.html" style="color: white; text-decoration: none;">Signup</a></td>
         <td align="center"><a href="feedback.php" style="color: white; text-decoration: none;">Feedback</a></td>
+        <td align="center"><a href="fileupload.php" style="color: white; text-decoration: none;">FileUpload</a></td>
     </tr>
 </table>
 

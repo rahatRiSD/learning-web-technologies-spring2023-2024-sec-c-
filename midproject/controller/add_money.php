@@ -1,10 +1,10 @@
 <?php
-// Start session
+
 session_start();
 
 
 require_once('../model/database.php');
-    // Database connection
+   
     $conn = dbConnect();
 
 if ($conn->connect_error) {

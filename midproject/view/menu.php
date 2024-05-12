@@ -8,15 +8,22 @@
 <body>
 
 <table width="100%" border="0">
-    <tr bgcolor="#333">
-        <td align="center"><a href="dashboard.php" style="color: white; text-decoration: none;">Home</a></td>
-        <td align="center"><a href="community.php" style="color: white; text-decoration: none;">Community</a></td>
-        <td align="center"><a href="newsletter.php" style="color: white; text-decoration: none;">Newsletter</a></td>
-        <td align="center"><a href="wallet.php" style="color: white; text-decoration: none;">Wallet</a></td>
-        <td align="center"><a href="settings.php" style="color: white; text-decoration: none;">Settings</a></td>
-        <td align="center"><a href="logout.php" style="color: white; text-decoration: none;">Logout</a></td>
-        <td align="center"><a href="singup.php" style="color: white; text-decoration: none;">Signup</a></td>
-    </tr>
+<td colspan="3" align="center" height="8%">
+            <a href="home_travel.html">Home</a>
+            <a href="community.php">Community</a>
+            <a href="feedback.php">Feedback</a>
+            <a href="fileupload.php">File Upload</a>
+            <a href="logout.php">Log Out</a>
+            <a href="newsletter.php">News Letter</a>
+            <a href="points.php">Points</a>
+            <a href="view_feedback.php">View Feedback</a>
+            <a href="view_transactions.php">View Transaction</a>
+            <a href="support.html">Support</a>
+            <a href="add_money">Add Money</a>
+
+            <a href="wallet.php">Wallet</a>
+            <a href="settings.php">Settings</a>
+        </td>
 </table>
 
 </body>

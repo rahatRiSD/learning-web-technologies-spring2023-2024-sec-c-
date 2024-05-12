@@ -22,35 +22,38 @@
 <body style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
     <h2>View Transactions</h2>
     <table width="100%" border="0">
-    <tr bgcolor="#333">
-        <td align="center"><a href="dashboard.php" style="color: white; text-decoration: none;">Home</a></td>
-        <td align="center"><a href="community.php" style="color: white; text-decoration: none;">Community</a></td>
-        <td align="center"><a href="newsletter.php" style="color: white; text-decoration: none;">Newsletter</a></td>
-        <td align="center"><a href="wallet.php" style="color: white; text-decoration: none;">Wallet</a></td>
-        <td align="center"><a href="settings.php" style="color: white; text-decoration: none;">Settings</a></td>
-        <td align="center"><a href="logout.php" style="color: white; text-decoration: none;">Logout</a></td>
-        <td align="center"><a href="signup.html" style="color: white; text-decoration: none;">Signup</a></td>
-        <td align="center"><a href="feedback.php" style="color: white; text-decoration: none;">Feedback</a></td>
+    <tr>
+    <td colspan="3" align="center" height="8%">
+            <a href="home_travel.html">Home</a>
+            <a href="community.php">Community</a>
+            <a href="feedback.php">Feedback</a>
+            <a href="fileupload.php">File Upload</a>
+            <a href="logout.php">Log Out</a>
+     
+
+            <a href="wallet.php">Wallet</a>
+            <a href="settings.php">Settings</a>
+        </td>
     </tr>
 </table>
 
     <?php
     
     require_once('../model/database.php');
-    // Database connection
+   
     $conn = dbConnect();
 
-    // Check connection
+    
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Retrieve transaction entries from the database
+    
     $sql = "SELECT * FROM transactions";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        // Output data of each row in a table
+        
         echo "<table>";
         echo "<tr><th>ID</th><th>Full Name</th><th>Email</th><th>Amount (BDT)</th><th>Points Earned</th><th>Transaction Date</th></tr>";
         while ($row = $result->fetch_assoc()) {
@@ -68,7 +71,7 @@
         echo "No transaction entries available.";
     }
 
-    // Close connection
+    
     $conn->close();
     ?>
 </body>

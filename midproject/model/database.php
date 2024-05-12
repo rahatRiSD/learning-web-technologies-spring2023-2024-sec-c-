@@ -1,17 +1,18 @@
-<?php
- 
-function dbConnect() {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
+<?php 
+    $host = "localhost";
+    $dbuser = "root";
+    $dbpass = "";
     $dbname = "web_tech";
- 
-    $conn = new mysqli($servername, $username, $password, $dbname);
- 
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+
+    function dbConnect(){
+        global $host;
+        global $dbuser;
+        global $dbname;
+        global $dbpass;
+
+        return $con = mysqli_connect($host, $dbuser, $dbpass, $dbname);
     }
- 
-    return $conn;
-}
+
+    
+
 ?>

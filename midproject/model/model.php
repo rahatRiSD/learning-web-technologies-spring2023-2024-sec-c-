@@ -77,7 +77,15 @@ function Data($email)
         echo " not found.";
     }
 }
+function deleteUser($username) {
+    $con = dbConnect();
 
+   
+    $sql = "DELETE FROM users WHERE userName = '$username'";
+
+    
+    return mysqli_query($con, $sql);
+}
 function displayUserInformation()
 {
     $con = getConnection();

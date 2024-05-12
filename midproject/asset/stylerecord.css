@@ -1,0 +1,53 @@
+h1 {
+    color: blue;
+}
+
+#d1 {
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+}
+
+#d2 {
+    background-color: green;
+    width: 300px;
+    height: 200px;
+    /* margin: 10px 20px;
+    padding: 20px; */
+    position: relative;
+    top: 0px;
+    left: 100px;
+    border: 3px solid black;
+}
+
+.insert-form {
+    text-align: center;
+    width: 30%;
+    padding: 20px;
+}
+
+legend h2 {
+    color: blue;
+}
+
+label {
+    color: blue;
+}
+
+input[type="email"],
+input[type="number"] {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: blue;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: darkblue;
+}
