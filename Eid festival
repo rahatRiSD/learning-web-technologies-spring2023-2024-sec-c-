@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বাংলা ঈদ উৎসব</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; text-align: center; margin: 0; padding: 20px; transition: background 0.3s, color 0.3s; background: #f8f9fa; color: #333; }
+        .dark-mode { background: #222; color: #fff; }
+        .container { max-width: 800px; margin: auto; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        .dark-mode .container { background: #333; box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); }
+        button { margin: 10px; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; background: #28a745; color: white; font-size: 16px; }
+        button:hover { background: #218838; }
+        input, textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
+        .gallery img { width: 100px; margin: 5px; border-radius: 5px; }
+        .event-list, .comments { text-align: left; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>বাংলা ঈদ উৎসব</h1>
+        <button onclick="toggleTheme()">থিম পরিবর্তন</button><h2>ঈদ শুভেচ্ছা তৈরি করুন</h2>
+    <input type="text" id="wishInput" placeholder="আপনার শুভেচ্ছা লিখুন">
+    <button onclick="generateWish()">শুভেচ্ছা তৈরি করুন</button>
+    <p id="wishDisplay"></p>
+
+    <h2>ঈদ কাউন্টডাউন</h2>
+    <p id="countdown"></p>
+
+    <h2>ঈদের জনপ্রিয় খাবার</h2>
+    <ul>
+        <li>সেমাই</li>
+        <li>পোলাও-মাংস</li>
+        <li>বিরিয়ানি</li>
+        <li>ফিরনি</li>
+    </ul>
+
+    <h2>ঈদ ইভেন্ট তালিকা</h2>
+    <div class="event-list">
+        <p>ঢাকা - জাতীয় ঈদগাহ</p>
+        <p>চট্টগ্রাম - জামাত ময়দান</p>
+    </div>
+
+    <h2>ছবি গ্যালারি</h2>
+    <div class="gallery" id="gallery"></div>
+    <input type="file" id="imageUpload" accept="image/*" onchange="uploadImage()">
+
+    <h2>ইসলামিক উক্তি</h2>
+    <p id="quote"></p>
+
+    <h2>কমেন্টস</h2>
+    <textarea id="commentInput" placeholder="আপনার মন্তব্য লিখুন"></textarea>
+    <button onclick="addComment()">পোস্ট করুন</button>
+    <div class="comments" id="comments"></div>
+
+    <h2>ঈদ দানের সুযোগ</h2>
+    <button onclick="donateNow()">দান করুন</button>
+    <p id="donationMessage"></p>
+</div>
+
+<script>
+    function toggleTheme() {
+        document.body.classList.toggle('dark-mode');
+    }
+
+    function generateWish() {
+        const wish = document.getElementById('wishInput').value;
+        document.getElementById('wishDisplay').innerText = wish || 'ঈদ মোবারক!';
+    }
+
+    function updateCountdown() {
+        const eidDate = new Date('2025-04-21');
+        const now = new Date();
+        const diff = eidDate - now;
+        const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+        document.getElementById('countdown').innerText = days > 0 ? `${days} দিন বাকি` : 'ঈদ মোবারক!';
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    function uploadImage() {
+        const file = document.getElementById('imageUpload').files[0];
+        if (file) {
+            const img = document.createElement('img');
+            img.src = URL.createObjectURL(file);
+            document.getElementById('gallery').appendChild(img);
+        }
+    }
+
+    function addComment() {
+        const comment = document.getElementById('commentInput').value;
+        if (comment) {
+            const p = document.createElement('p');
+            p.innerText = comment;
+            document.getElementById('comments').appendChild(p);
+        }
+    }
+
+    function donateNow() {
+        document.getElementById('donationMessage').innerText = "আপনার দান গ্রহণ করা হয়েছে! আল্লাহ আপনাকে পুরস্কৃত করুন।";
+    }
+
+    const quotes = ["তোমরা তোমাদের মধ্যকার দরিদ্রদের সাহায্য করো", "ধৈর্য এবং নামাজের মাধ্যমে আল্লাহর সাহায্য প্রার্থনা করো", "সত্যিকারের ঈদ হচ্ছে যখন কেউ গরিবদের সাহায্য করে।"];
+    document.getElementById('quote').innerText = quotes[Math.floor(Math.random() * quotes.length)];
+</script>
+
+</body>
+</html>
