@@ -1,0 +1,64 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans Bengali', sans-serif;
+    background-color: #ffcc00;
+    color: #000;
+    text-align: center;
+    padding: 30px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 50px;
+    color: #d32f2f;
+    margin-bottom: 20px;
+}
+
+header p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+#timer {
+    font-size: 40px;
+    font-weight: bold;
+    color: #4caf50;
+}
+
+footer p {
+    margin-top: 30px;
+    font-size: 18px;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 40px;
+    }
+    
+    h2 {
+        font-size: 25px;
+    }
+    
+    #timer {
+        font-size: 35px;
+    }
+}
